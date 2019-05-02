@@ -1,0 +1,41 @@
+body{
+    font-family: 'Lato', sans-serif;
+    /* font-size: 16px; */
+
+    font-weight: 400;
+    line-height: 1.6;
+    color: $text-gray;
+    padding: 3rem;
+}
+
+.heading-secondary{
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(to right, $color-primary,$color-primary-dark);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color:transparent;
+    transition: .3s all;
+
+    &:hover{
+        transform: skewX(-15deg) skewY(-5deg) scale(1.1);
+        text-shadow: 5px 15px 20px rgba($color-black,0.2)
+    }
+}
+a{
+    text-decoration: none;
+    
+}
+.heading-tercery{
+    font-size: $default-font-size;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.paragraph{
+    display: inline-block;
+    font-size: $default-font-size;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}
