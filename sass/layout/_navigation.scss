@@ -1,0 +1,99 @@
+.navigation{
+
+    &__checkbox{
+        display: none;
+        &:checked ~  .navigation__background {
+            transform: scale(80);
+        }
+        &:checked ~  .navigation__nav {
+            display: block;
+            opacity: 1;
+            
+        }
+    }
+    
+
+    &__button{
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        width: 6rem;
+        height: 6rem;
+        background: $text-white;
+        border-radius: 50%;
+        box-shadow: 0 .4rem 1rem rgba($color-black, 0.4);
+        z-index: 1000;
+    }
+
+    &__background{
+        position: fixed;
+        top: 6.5rem;
+        right: 6.5rem;
+        width: 5rem;
+        height: 5rem;
+        background-image: radial-gradient($color-primary-light 0%,$color-primary 50%);
+        border-radius: 50%;
+        z-index: 500;
+        
+       transition: .4s all cubic-bezier(0.86, 0, 0.7, 0);
+    }
+    &__nav{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 750;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        display: none;
+        transition: .3s all;
+        animation: fade 1s ease-in-out;
+    }
+    @keyframes fade {
+        0%{
+            transform: translateX(-5rem);
+            opacity: .33;
+        }
+        50%{
+            transform: translateX(8rem);
+        }
+    }
+
+    &__list{
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 750;
+        list-style: none;
+        text-align: center;
+    }
+
+    &__item{
+        margin: 1.5rem;
+        
+    }
+
+    &__link{
+        &:link,&:visited{
+            font-size: 2rem;
+            padding: 2rem ;
+            display: block;
+            color: $text-white;
+            background-image: linear-gradient(120deg,transparent 0%, transparent 50%,$text-white 50%);
+            background-size: 240%;
+            transition: .3s all;
+            text-transform: uppercase;
+        }
+        &:hover, &:active{
+            color: $color-primary-dark;
+            background-position: 100%;
+            transform: translateX(2rem);
+            
+        }
+        span{
+            font-size: 2.5rem;
+        }
+    }
+}

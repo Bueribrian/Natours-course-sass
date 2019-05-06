@@ -47,7 +47,7 @@ body {
   text-transform: uppercase;
   font-size: 4rem;
   font-weight: 900;
-  background: linear-gradient(to right, #55c57a, #26ad80);
+  background: linear-gradient(to right, #55c57a, #02b635);
   display: inline-block;
   -webkit-background-clip: text;
   color: transparent;
@@ -153,22 +153,22 @@ a {
   animation-fill-mode: backwards; }
 
 .btn-green {
-  background: #26ad80;
+  background: #02b635;
   color: #fff; }
   .btn-green::after {
-    background: #26ad80; }
+    background: #02b635; }
 
 .btn-text:link, .btn-text:visited {
   display: inline-block;
   font-size: 1.6rem;
-  color: #26ad80;
+  color: #02b635;
   padding: 6px;
   text-decoration: none;
-  border-bottom: 2px solid #26ad80;
+  border-bottom: 2px solid #02b635;
   transition: .2s all; }
 
 .btn-text:hover {
-  background: #26ad80;
+  background: #02b635;
   color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.211); }
 
@@ -452,7 +452,7 @@ a {
   margin-top: -20vh; }
 
 .section-features {
-  background-image: linear-gradient(rgba(85, 197, 122, 0.8), rgba(38, 173, 128, 0.8)), url("../img/nat-1-large.jpg");
+  background-image: linear-gradient(rgba(85, 197, 122, 0.8), rgba(2, 182, 53, 0.8)), url("../img/nat-1-large.jpg");
   background-position: top;
   background-size: cover;
   margin-top: -10rem;
@@ -472,7 +472,7 @@ a {
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, #55c57a, #26ad80); }
+  background-image: linear-gradient(to right bottom, #55c57a, #02b635); }
 
 .footer-home {
   padding: 15rem 0;
@@ -496,7 +496,7 @@ a {
 .header {
   position: relative;
   height: 90vh;
-  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.7), rgba(126, 213, 111, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.7), rgba(132, 241, 112, 0.8)), url(../img/hero.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
@@ -570,7 +570,7 @@ a {
   .feature__box__icon {
     font-size: 7rem;
     display: inline-block;
-    background: linear-gradient(to right, #55c57a, #7ed56f);
+    background: linear-gradient(to right, #55c57a, #84f170);
     -webkit-background-clip: text;
     color: transparent; }
   .feature__box__text {
@@ -578,3 +578,82 @@ a {
   .feature__box:hover {
     transform: scale(1.1) translateY(-1rem);
     box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.4); }
+
+.navigation__checkbox {
+  display: none; }
+  .navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(80); }
+  .navigation__checkbox:checked ~ .navigation__nav {
+    display: block;
+    opacity: 1; }
+
+.navigation__button {
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  width: 6rem;
+  height: 6rem;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.4);
+  z-index: 1000; }
+
+.navigation__background {
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  width: 5rem;
+  height: 5rem;
+  background-image: radial-gradient(#84f170 0%, #55c57a 50%);
+  border-radius: 50%;
+  z-index: 500;
+  transition: 0.4s all cubic-bezier(0.86, 0, 0.7, 0); }
+
+.navigation__nav {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 750;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  display: none;
+  transition: .3s all;
+  animation: fade 1s ease-in-out; }
+
+@keyframes fade {
+  0% {
+    transform: translateX(-5rem);
+    opacity: .33; }
+  50% {
+    transform: translateX(8rem); } }
+
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 750;
+  list-style: none;
+  text-align: center; }
+
+.navigation__item {
+  margin: 1.5rem; }
+
+.navigation__link:link, .navigation__link:visited {
+  font-size: 2rem;
+  padding: 2rem;
+  display: block;
+  color: #fff;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 240%;
+  transition: .3s all;
+  text-transform: uppercase; }
+
+.navigation__link:hover, .navigation__link:active {
+  color: #02b635;
+  background-position: 100%;
+  transform: translateX(2rem); }
+
+.navigation__link span {
+  font-size: 2.5rem; }
