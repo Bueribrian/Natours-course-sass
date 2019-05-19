@@ -8,10 +8,24 @@
 
 html{
     // This defines what 1rem is
-    font-size: 62.5%;
+    font-size: 62%;
+    
+    @include responsive(tab-land){
+        font-size: 56.2%;
+    }
+    @include responsive(tab-port){
+        font-size: 50%;
+    }
+    @include responsive(phone){
+        font-size: 45%;
+    }
+    @include responsive(bg-desktop){
+        font-size: 75%;
+    }
 }
 
 body{
     box-sizing: border-box;
+
 }
 

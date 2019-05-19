@@ -5,14 +5,16 @@
         &:checked ~  .navigation__background {
             transform: scale(80);
         }
-        &:checked ~  .navigation__nav {
+        &:checked ~ .navigation__nav {
             display: block;
             opacity: 1;
             
         }
+        &:checked + .navigation__button__icon{
+            color: transparent;
+        }
     }
-    
-
+   
     &__button{
         position: fixed;
         top: 6rem;
@@ -23,8 +25,50 @@
         border-radius: 50%;
         box-shadow: 0 .4rem 1rem rgba($color-black, 0.4);
         z-index: 1000;
-    }
+        cursor: pointer;
 
+        @include responsive(tab-port){
+            top: 5rem;
+            right: 5rem;
+        }
+        @include responsive(phone){
+            top: 3rem;
+            right: 3rem;
+        }
+
+        &__icon{
+            position: relative;
+            margin-top: 3rem;
+            &,
+            &::after,
+            &::before{
+               width: 3rem;
+               height: 2px;
+               background-color: gray;
+               display: inline-block;
+               left: 25%;
+               transition: .3s all;
+            }
+            &::after,&::before{
+               content: '';
+               position: absolute;
+               left: 0;
+            }
+
+            &::before{
+                top:-.8rem;
+            }
+            &::after{
+                top:.8rem;
+            }
+        }
+    }
+    &__button:hover &__button__icon::before{
+        top: -1rem;
+    }
+    &__button:hover &__button__icon::after{
+        top: 1rem;
+    }
     &__background{
         position: fixed;
         top: 6.5rem;
@@ -34,7 +78,14 @@
         background-image: radial-gradient($color-primary-light 0%,$color-primary 50%);
         border-radius: 50%;
         z-index: 500;
-        
+        @include responsive(tab-port){
+            top: 5.5rem;
+            right: 5.5rem;
+        }
+        @include responsive(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+        }
        transition: .4s all cubic-bezier(0.86, 0, 0.7, 0);
     }
     &__nav{
@@ -95,5 +146,18 @@
         span{
             font-size: 2.5rem;
         }
+    }
+    &__checkbox:checked + &__button &__button__icon{
+        background: transparent;
+    }
+    &__checkbox:checked + &__button &__button__icon::before{
+       top: 0;
+        transform-origin: center ;
+        transform: rotate(135deg)
+    }
+    &__checkbox:checked + &__button &__button__icon::after{
+        top: 0;
+        transform-origin: center ;
+        transform: rotate(-135deg)
     }
 }

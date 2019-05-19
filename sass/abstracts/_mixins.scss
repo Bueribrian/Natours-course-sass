@@ -5,3 +5,38 @@
         clear: both;
     }
 }
+
+@mixin absCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin responsive($device){
+    @if $device == phone { 
+        @media screen and (max-width:37.5em){
+            @content
+        }
+    }
+    @if $device == tab-port { 
+        @media screen and (max-width:56.25em){
+            @content
+        }
+    }
+    @if $device == tab-land { 
+        @media screen and (max-width:75em){
+            @content
+        }
+    }
+    @if $device == mid-desktop { 
+        @media screen and (max-width:93.75em){
+            @content
+        }
+    }
+    @if $device == big-desktop { 
+        @media screen and (min-width:112.5em){
+            @content
+        }
+    }
+}

@@ -16,7 +16,9 @@
         display: block;
         transition: .2s all;
         font-weight: 600;
-
+        @include responsive(tab-port){
+            width: 100%;
+        }
        
         &:focus{
             outline: none;

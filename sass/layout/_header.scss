@@ -9,6 +9,10 @@
     clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
     -webkit-clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
 
+    @include responsive(phone){
+        clip-path: polygon(0 0,100% 0,100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0,100% 0,100% 85vh, 0 100%);
+    }
     & .logo{
         position: absolute;
         top:4rem;
@@ -36,12 +40,21 @@
             font-weight: 400;
             letter-spacing: 2.5rem;
             animation: 1s fadeToLeft ease;
+
+            @include responsive(phone){
+                letter-spacing: 1.1rem;
+                font-size: 5.5rem;
+            }
         }
         & .title-secondary{
             font-size: 2rem;
             font-weight: 600;
             letter-spacing: 1.36rem;
             animation: 1s fadeToRight ease;
+            @include responsive(phone){
+                letter-spacing: .8rem;
+                font-size: 1.8rem;
+            }
         }
     }
 
